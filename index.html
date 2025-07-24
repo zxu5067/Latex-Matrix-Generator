@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script src="index.js"></script>
+  </head>
+
+  <body onload = "generate_matrix(); generate_latex()">
+    <div id="title">
+      <header>Latex Matrix Creator</header>
+    </div>
+
+    <div class="matrix_input">
+      <label>Matrix Type
+        <select id="matrix_type" onchange="generate_latex()">
+          <option value="matrix">Plain(matrix)</option>
+          <option value="pmatrix">Parentheses(pmatrix)</option>
+          <option selected = "selected" value="bmatrix">Brackets(bmatrix)</option>
+          <option value="Bmatrix">Braces(Bmatrix)</option>
+          <option value="vmatrix">Pipes(vmatrix)</option>
+          <option value="Vmatrix">Double Pipes(Vmatrix)</option>
+          <option value="smallmatrix">Small Matrix</option>
+        </select>
+      </label>
+
+      <label>Rows
+        <input id="rows" type="number" max="8" min="1" value = "2">
+      </label>
+      <label>Columns
+        <input id="cols" type="number" max="8" min="1" value = "2">
+      </label>
+      <button onclick="generate_matrix()">Generate/Clear</button>
+    </div>
+
+    <div id="generated_matrix"></div>
+
+    <div id="generation">
+      <label>Copy and paste</label><br>
+      <textarea id="copypaste"></textarea>
+    </div>
+
+    <div id="view_latex">Latex Preview</div>
+
+    <div id="extra_functions">
+      <label id="symbol_title">Symbols</label>
+      <label>Greek Letters:
+        <br>
+        <button value = "\alpha" > α </button>
+        <button value = "\beta"> β </button>
+        <button value = "\chi"> χ </button>
+        <button value = "\delta"> δ </button>
+        <button value = "\Delta"> ∆ </button>
+        <button value = "\gamma"> γ </button>
+        <button value = "\sigma"> σ </button>
+        <button value = "\theta"> θ </button>
+        <button value = "\phi"> φ </button>
+      </label>
+      <label>Functions:
+        <br>
+        <button value = "\sin"> sin </button>
+        <button value = "\cos"> cos </button>
+        <button value = "\tan"> tan </button>
+        <button value = "\arcsin"> arcsin </button>
+        <button value = "\arccos"> arccos </button>
+        <button value = "\arctan"> arctan </button>
+      </label>
+       <label>Operators:
+        <br>
+        <button value = "\frac{}{}"> / </button>
+        <button value = "\sqrt{}"> √ </button>
+      </label>
+      <label>Other:
+        <br>
+        <button value = "\cdots"> ⋯ </button>
+        <button value = "\vdots"> ⋮ </button>
+        <button value = "\ddots"> ⋱ </button>
+      </label>
+      
+    </div>
+  </body>
+</html>
